@@ -10,28 +10,29 @@
 
 #-------- Types of Objects --------#
 
-# Variable: A simple object, for example, a = 1 
-# List: [], A list is a collection of objects 
-#			which is ordered and mutable 
-# Tuple: (), A tuple is a collection of objects 
-#	    which is ordered and immutable 
-# Dictionary: {}, A dictionary is a collection which 
+# Variable: A simple object, for example, a = 1
+# List: [], A list is a collection of objects
+#			which is ordered and mutable
+# Tuple: (), A tuple is a collection of objects
+#	    which is ordered and immutable
+# Dictionary: {}, A dictionary is a collection which
 # 			 is unordered, changeable and indexed objects
 
 #---------- Operators  ----------#
 
-# Addition					x + y	
-# Subtraction				x - y	
-# Multiplication			x * y	
-# Division					x / y	
-# Modulus					x % y	
-# Exponentiation  			x ** y	
-# Floor division			x // y
-# Equal						x == y	
-# Not equal					x != y	
-# Greater than				x > y	
-# Less than					x < y	
-# Greater than or equal to	x >= y	
+# Addition					x + y
+# Subtraction				x - y
+# Multiplication			x * y
+# Division					x / y
+# Modulus					x % y	(remainder)
+# Exponentiation  			x ** y
+# Floor division			x // y (division and then rounding down)
+#BOOLEAN OPERATORS:
+# Equal						x == y
+# Not equal					x != y
+# Greater than				x > y
+# Less than					x < y
+# Greater than or equal to	x >= y
 # Less than or equal to		x <= y
 
 # and, Returns True if both statements are true
@@ -40,14 +41,15 @@
 # is, Returns True if both variables are the same object
 # in, Returns True if a sequence with the specified value is present in the object
 
-# See https://www.w3schools.com/python/python_operators.asp for a complete list.
+# See https://www.w3schools.com/python/python_operators.asp for more help.
 
 
 #---------- Strings ----------#
 
+#Can use single or double quotes 
 # Single Quotes
 name = 'Dwayne'
-# Double Quotes 
+# Double Quotes
 age = "50"
 # Combining strings, using .format{}
 intro =  "Hi, my name is {}. I'm {} years old.".format(name, age)
@@ -57,7 +59,7 @@ intro = "Hi, I'm " + name + ", I'm " + age
 print(intro)
 # Triple Quotes, it produces a string that spans multiple lines
 new_intro = """Hello!,
-I'm Dwayne. 
+I'm Dwayne.
 What's up?"""
 new_intro # representation
 print(new_intro) # print method
@@ -67,7 +69,7 @@ print(new_intro) # print method
 intro
 intro[0]
 intro[2]
-intro[4] 
+intro[4]
 
 # Strings are immutable, we cannot replace a character in a string
 name[0] = "a"
@@ -87,9 +89,9 @@ name.split() # Using ' ' as the default separator
 name.split('n') ## Using 'a' as separator
 new_intro.split('\n') ## Using line break as separator
 
-# We can index using negative numbers 
+# We can index using negative numbers
 wustl = 'WashingtonUniversity'
-wustl[-1] 
+wustl[-1]
 
 # Check how the characters are positioned...
 #  0   1   2   3   4   5   6   7   8   9  10 11 12 13 14 15 16 17 18 19
@@ -111,7 +113,7 @@ wustl[1:8] # sequence, from index 1 to 7, remember: Python indexes are n through
 [letter for letter in wustl] # the output is a list, more on this below
 
 # We can join strings in a list using join
-wustl_chr = [i for i in wustl] 
+wustl_chr = [i for i in wustl]
 wustl_chr
 '-'.join(wustl_chr) # the output is a string
 
@@ -129,7 +131,7 @@ type(whole)
 whole
 remainder = 5%3
 print("Five divided by three is {} and {} fifths".format(whole, remainder)) # Or
-print("Five divided by three is %d and %d fifths" % (whole, remainder)) 
+print("Five divided by three is %d and %d fifths" % (whole, remainder))
 
 # these two formats are similar, however, format is more flexible in many instances (it did not exist prior to python 2.5)
 print('This will print both a string: {} and a number: {}'.format(name, whole))
@@ -162,13 +164,13 @@ type(12.0) # float
 
 #---------- Lists ----------#
 
-# A list is a collection of objects which is ordered and mutable 
+# A list is a collection of objects which is ordered and mutable
 # Lists can be changed
 # Lists can include multiple object types
 # Lists will probably be your go-to storage in Python
 # Similar to vectors in R, but more flexible
 
-wustl_chr 
+wustl_chr
 type(wustl_chr)
 
 # We can add a new element to a list using the method append()
@@ -176,8 +178,8 @@ wustl_chr.append('P')
 wustl_chr
 
 # Lists can include multiple types of objects
-wustl_chr.append(1)
-wustl_chr.append(['1'])
+wustl_chr.append(1) #number
+wustl_chr.append(['1']) #another list
 wustl_chr
 
 # We can index lists
@@ -204,7 +206,7 @@ wustl_chr
 wustl_chr.pop(1)
 wustl_chr
 
-# We can remove the object at the last index using 
+# We can remove the object at the last index using
 wustl_chr.pop()
 wustl_chr
 
@@ -217,19 +219,22 @@ wustl_chr
 # More on this later
 wustl_chr = [i for i in wustl_chr if i != 'i']
 
-# We can check all the methods and attributes in a list using
+# We can check all the methods and attributes in a list using the directory
 dir(wustl_chr)
 
 #---------- Tuples ----------#
 
+#python specific data type 
+
 l = [7, 'a', '6']
 
 
-# Tuple: (), A tuple is a collection of objects which is ordered and immutable 
+# Tuple: (), A tuple is a collection of objects which is ordered and immutable
 # Not very common, but useful occasionally and will appear from time to time
 
 # We use () to create a tuple
 tup = (1, 'a', 'a', 11, 6, 5, 'Apple', ['python', 'R'])
+type(tup)
 
 # We can index tuples
 print(tup[1])
@@ -241,15 +246,15 @@ tup.append(10000) ## !!
 # Let's check the methods available for tuples
 dir(tup)
 
-# We can count the number of times that an element appears 
+# We can count the number of times that an element appears
 tup.count('a')
 
 #---------- Dictionary ----------#
 
-# A dictionary is a collection which is unordered, changeable and indexed 
+# A dictionary is a collection which is unordered, changeable and indexed
 
 # We use {} to create a dictionary
-myInfo = {"name" : "anna maria", "age" : 50, "research" : ["IR", "methods"]}
+myInfo = {"name" : "alex", "age" : 23, "research" : ["IR", "normative theory"]}
 
 # We call elements using keys.
 myInfo
@@ -263,12 +268,11 @@ myInfo[0] ##!!!
 myInfo["research"]
 
 # We can add new elements to a dictionary
-myInfo["last_name"] = "prati"
+myInfo["last_name"] = "avery"
 myInfo
 
 # We can modify elements
-myInfo["name"] = 'annamaria'
-myInfo["research"] = 'methods'
+myInfo["name"] = 'alexandria'
 myInfo
 
 #---------- Booleans and Conditionals ----------#
@@ -285,7 +289,7 @@ else:
 
 # Multiple lines of code:
 # - Indentation matters!
-# - Even an empty line with spaces can cause errors, 
+# - Even an empty line with spaces can cause errors,
 #   Python is very picky about this
 if x == 1:
 	print('x is one')
@@ -303,7 +307,7 @@ False == (1 != 1.0)
 
 # Two types of loops: for and while
 # for loop: loops over iterable objects
-# while loop: runs until condition is met 
+# while loop: runs until condition is met
 
 # A string is an iterable object
 for i in wustl:
@@ -340,7 +344,7 @@ sum(mynum) == sum([.05**i for i in range(1,10)])
 while len(wustl_chr)>1:
 	wustl_chr.pop()
 # What happened to wustl_chr?
-wustl_chr 
+wustl_chr
 
 # Be careful with while loops, they can go forever
 # in ipython or terminal, stop with 'control + c'
@@ -384,7 +388,7 @@ for i in range(1, 10):
 
 #---------- Functions ----------#
 
-# Use them to write cleaner code 
+# Use them to write cleaner code
 # keep them simple
 # We can return any type of object
 # Don't forget to add return for output
@@ -410,17 +414,17 @@ add_squares_2(1,2)
 # Copyright of the original version:
 
 # Copyright (c) 2014 Matt Dickenson
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
