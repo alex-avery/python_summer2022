@@ -147,6 +147,7 @@ me = Human() # Now we need to add age and name
 me = Human(age = 50, pronoun = 'she', name = 'Susie')
 # We can check all the attributes for the instance
 dir(me)
+you = Human('John', 'he', 'NA')
 
 you = Human(name = 'John', pronoun = 'he', age = 'NA')
 
