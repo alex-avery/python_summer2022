@@ -123,6 +123,7 @@ me = Human()
 type(me)
 # Check methods and attributes
 dir(me)
+#notice that print is not a built in function for classes
 
 # All instances share the same attributes
 you = Human()
@@ -288,7 +289,7 @@ washu.db
 
 # We can sort the students within grade
 sorted_students = washu.sort()
-print(sorted_students)
+print(sorted_students) #notice that it returns tuples that are in alphabetical order 
 washu.db # original order is preserved within the original object
  
 # Note that our print method already sorts the students
@@ -376,7 +377,7 @@ print(jill == mom.kids[0])
 jack = mom.have_child("Jack")
 print(jack.introduce())
 
-# Print the list of children
+# All of these are different ways to print the list of children
 mom.list_children()
 jack.parent.list_children()
 jack.parent.kids[0].parent.list_children()
@@ -406,7 +407,7 @@ class Animal:
     # An abstract method is a method that is declared, but contains no implementation.
 
     def furry(self): ## function object of all Animals
-        return True
+        return True #This is a default but can be changed in the child class
 
 
 # "children" or specific classes
@@ -442,6 +443,7 @@ animals = [leonard, gus, nemo]
 for animal in animals:
     print(animal.name + ': ' + animal.talk())
 
+# The error occured because fish does not have a talk method
 # We would need to modify class Fish
 
 ## What happened here?
