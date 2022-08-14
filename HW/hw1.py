@@ -4,4 +4,8 @@
 
 # create portfolio class
 class Portfolio:
+
+    
+#create Stock class
+class Stock:
     
