@@ -4,24 +4,35 @@
 
 # create portfolio class
 class Portfolio:
+    
     # create initializer for portfolio class
-    def _int_(self):
+    def _int_(self, cash = 0):
         self.cash = []
-    # create function to add or remove cash
-    def Cash(self, amount, transaction_type):
-        # only allow positive amounts of cash
+        
+    # create function to add cash
+    def addCash(self, amount, transaction_type = 'deposit'):
+        # amount must be greater than zero 
         if amount <= 0:
-            print("Please specify an amount greater than zero to deposit or withdraw")
-        # for deposits:
-        elif transaction_type == 'deposit':
-            self.cash.append(amount)
-        # for withdraws: 
-        elif transaaction_type == 'withdraw':
-            self.cash.append(-1 * amount)
-        # for anything not a deposit or withdraw
+            print("Please specify an amount greater than zero to deposit.")
+        # transaction type must be deposit
+        elif transaction_type != 'deposit':
+            print("Transaction type must be deposit.")
+        # add cash amount
         else:
-            print("Please specify transaction type as deposit or withdraw")
-            
+            self.cash.apppend(amount)
+    
+    # create function to remove cash 
+    def withdrawCash(self, amount, transcation_type = 'withdraw'):
+        # amount must be greater than zero
+        if amount <= 0:
+            print("Please specify an amount greater than zero to withdraw.")
+        # transaction type must be withdraw
+        elif transaction_type != 'withdraw':
+            print("Transaction type must be withdraw.")
+        # remove cash amount 
+        else:
+            self.cash.append(-1 * amount)
+      
         
         
 
