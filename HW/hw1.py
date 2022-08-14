@@ -2,3 +2,6 @@
 # Homework 1
 # Alex Avery
 
+# create portfolio class
+class Portfolio:
+    
