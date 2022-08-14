@@ -6,6 +6,10 @@
 class Portfolio:
 
     
-#create Stock class
+# create Stock class
 class Stock:
+
+
+# create Mutual Funds class
+class Mutual_Funds:
     
