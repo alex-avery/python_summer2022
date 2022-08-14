@@ -1,3 +1,7 @@
+#Python Course - Summer 2022
+#Day 1 Lab 
+#Alex Avery
+
 # You can find information on how to convert numbers to a different base here:
 # https://www.tutorialspoint.com/computer_logical_organization/number_system_conversion.htm
 

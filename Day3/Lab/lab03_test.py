@@ -1,22 +1,21 @@
 import unittest
-from lab03 import * # needs to be same wd as lab03.py
+from lab03 import *
 
-class labTests(unittest.TestCase):
-	
-	## fill in a few tests for each
-	## make sure to account for correct and incorrect input
-
-    def test_shout(self):
-
+class Test_string_functions(unittest.TestCase):
+    
+    def test_shout(self): 
+        self.assertEqual(shout('My name is Alex'), 'MY NAME IS ALEX')
+    
     def test_reverse(self):
+        self.assertEqual(reverse('My name is Alex'), 'xelA si eman yM') 
 
     def test_reversewords(self):
-
+    	self.assertEqual(reversewords('My name is Alex'), 'Alex is name My') 
+    
     def test_reversewordletters(self):
+    	self.assertEqual(reversewordletters('My name is Alex'), 'yM eman si xelA') 
 
-    def test_piglatin(self):
-
-
-if __name__ == '__main__':
-  unittest.main()
+if __name__ == '__main__': 
+    unittest.main()
+    
 

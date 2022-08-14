@@ -54,7 +54,7 @@
 
 # We (mainly) use two modules: urllib and BeautifulSoup
 
-# pip3 install beautifulsoup4
+#pip3 install beautifulsoup4
 from bs4 import BeautifulSoup
 import urllib.request
 
@@ -252,7 +252,7 @@ from selenium.webdriver.common.keys import Keys
 # Interactive example:
 
 driver_path = '/Users/miame/Documents/GitHub/python_summer2022/Day4/Lecture/chromedriver'
-driver = webdriver.Chrome(driver_path)
+driver = webdriver.Chrome()
 
 # start the web drivers
 driver.get('https://www.google.com')
@@ -310,7 +310,7 @@ import sys
 import os
 
 # Set WD
-os.chdir('C:\\Users\\miame\\Documents\\GitHub\\python_summer2022\\Day4\\Lecture')
+os.chdir('/Users/alexcisco/Library/Mobile Documents/com~apple~CloudDocs/Documents/WUSTL/Courses/Python Course/python_summer2022/Day4/Lecture')
 
 # Read all lines as one string
 with open('readfile.txt') as f:
