@@ -9,7 +9,7 @@
 
 # Set Directory
 import os
-os.chdir('C:\\Users\\miame\\Documents\\GitHub\\python_summer2022\\Day5\\Lecture')
+os.chdir('/Users/alexcisco/Library/Mobile Documents/com~apple~CloudDocs/Documents/WUSTL/Courses/Python Course/python_summer2022/Day5/Lecture')
 
 
 #---------- Regular Expressions ----------#
@@ -69,17 +69,17 @@ re.findall(r"\n", alltext) # all breaklines
 # we use "r" to signal the start of a pattern.
 # "r" is Python's raw string notation for regular expression patterns
 # used instead of escape character "\" 
-"\n"
-print("\n")
+"\n" 
+print("\n") #will print a line break
 
 "\\n"
-print("\\n")
+print("\\n") #will read it as \n
 
 r"\n"
-print(r"\n")
+print(r"\n") #equivalent to the example is above 
 
 r"\\n"
-print(r"\\n")
+print(r"\\n") #will return \\n
 
 #---------- Basic special characters ----------#
 
@@ -89,7 +89,7 @@ re.findall(r"\d", alltext)
 re.findall(r"\D", alltext) 
 # all instances of the char in []
 re.findall(r"[a]", alltext) 
-# all instances of the from char 1 to char 2 in []
+# all instances of the from char 1 to char 2 in [] (char2 inclusive)
 re.findall(r"[a-d]", alltext) 
 # all char, ^ except for of the from char 1 to char 2 in []
 re.findall(r"[^a-d]", alltext) 
@@ -98,7 +98,7 @@ re.findall(r"[a-zA-Z0-9]", alltext)
 # \w alphanumeric, one word char 
 re.findall(r"\w", alltext) # same as re.findall(r"[a-zA-Z0-9]", alltext)
 # \W non-alphanumeric, one non-word char
-re.findall(r"\W", alltext) # same as re.findall(r"[^a-zA-Z0-9]", alltext)
+re.findall(r"\W", alltext) # same as re.findall(r"[^a-zA-Z0-9]", alltext) ex: puncuation, spaces, line break
 # \s whitespace
 re.findall(r"\s", alltext) 
 # \S non-whitespace
@@ -119,27 +119,15 @@ re.findall(r"\d{1}", alltext)
 # {x, y} from x to y times (numbers with exact number of digits from x to y)
 re.findall(r"\d{1,3}", alltext) 
 
+# CHEAT SHEETS FOR REGULAR EXPRESSIONS:
 # More here: https://www.regular-expressions.info/refrepeat.html
 # And hear: https://www.debuggex.com/cheatsheet/regex/python
 
 # Short Exercise: How would we grab 10/10 as it appears in text?
 x = "Hi 10/10 hello 9/18 asdf 9/9"
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Answer
 re.findall(r"\d{2}/\d{2}", x) 
-
 
 ## Explain what's happening:
 x = "American's lov\we McDonalds"
@@ -217,17 +205,6 @@ re.findall(r'^b\w*', alltext)
 # Check if a line ends in a period
 # How is this working?
 re.findall(r'^.*\.$', alltext, re.MULTILINE)
-
-
-
-
-
-
-
-
-
-
-
 
 # '^.' = starts with any char
 # * returns up to the end of the line
