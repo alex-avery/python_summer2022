@@ -4,6 +4,9 @@
 
 # create portfolio class
 class Portfolio:
+    def _int_(self):
+        self.cash = []
+        
 
     
 # create Stock class
