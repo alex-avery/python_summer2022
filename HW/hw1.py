@@ -6,11 +6,13 @@
 class Portfolio:
     
     # create initializer for portfolio class
-    def __init__(self, cash = 0, stocks = {}):
+    def __init__(self, cash = 0, stocks = {}, mutualfund = {}):
         # amount of cash in portfolio
         self.cash = cash
         # stocks and shares in portfolio 
         self.stocks = stocks
+        # mutual funds and shares in portfolio
+        self.mutualfund = mutualfund
           
     # create function to add cash
     def addCash(self, amount):
@@ -42,6 +44,17 @@ class Portfolio:
             # subtract stock price from cash
             self.cash -= stock_total
     
+    # create function to buy mutual funds
+    def buyMutualFund(self, shares, mutualfund):
+        mutualfund_total = shares * 1
+        if mutualfund_total > self.cash:
+            print("You do not have enough cash to cover this transaction.")
+        else:
+            # add mutual fund shares to portfolio 
+            self.mutualfund[mutualfund.symbol] = {"shares" : shares}
+            # subtract mutual funds price from cash
+            self.cash -= mutualfund_total
+    
 # create Stock class 
 class Stock:
     # create initializer for stock class
@@ -67,8 +80,8 @@ s = Stock(20, "HFH") #Create Stock with price 20 and symbol "HFH" (check)
 portfolio.buyStock(5, s) #Buys 5 shares of stock s (check)
 mf1 = MutualFund("BRT") #Create MF with symbol "BRT" (check)
 mf2 = MutualFund("GHT") #Create MF with symbol "GHT" (check)
-portfolio.buyMutualFund(10.3, mf1) #Buys 10.3 shares of "BRT"
-portfolio.buyMutualFund(2, mf2) #Buys 2 shares of "GHT"
+portfolio.buyMutualFund(10.3, mf1) #Buys 10.3 shares of "BRT" (check)
+portfolio.buyMutualFund(2, mf2) #Buys 2 shares of "GHT" (check)
 print(portfolio) #Prints portfolio
 #cash: $140.50
 #stock: 5 HFH
