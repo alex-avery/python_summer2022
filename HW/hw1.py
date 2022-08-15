@@ -43,8 +43,8 @@ class Stock:
 
 
 # create Mutual Funds class
-class Mutual_Funds:
-    # create initializer for mutual funds class
+class MutualFund:
+    # create initializer for mutual fund class
     def __init__(self, ):
         # mutual funds symbol
         self.symbol = symbol
