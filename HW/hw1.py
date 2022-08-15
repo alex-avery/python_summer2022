@@ -7,6 +7,7 @@ class Portfolio:
     
     # create initializer for portfolio class
     def __init__(self, cash = 0):
+        # amount of cash in portfolio
         self.cash = cash
           
     # create function to add cash
@@ -31,8 +32,13 @@ class Portfolio:
         
 
     
-# create Stock class
+# create Stock class 
 class Stock:
+    # create initializer for portfolio class
+    def __init__(self, price, symbol):
+        # price of stock 
+        self.price = price 
+        self.symbol = symbol
 
 
 # create Mutual Funds class
