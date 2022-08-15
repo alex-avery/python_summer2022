@@ -2,6 +2,9 @@
 # Homework 1
 # Alex Avery
 
+# import necessary modules 
+import random
+
 # create portfolio class
 class Portfolio:
     
@@ -53,6 +56,20 @@ class Portfolio:
             # add mutual fund shares to portfolio 
             self.mutualfund[mutualfund.symbol] = {"shares" : shares}
             # subtract mutual funds price from cash
+            self.cash -= mutualfund_total
+    
+    # create function to sell mutual fund
+    def sellMutualFund(self, mutualfund, shares):
+        if shares > self.mutualfund[mutualfund.symbol]["shares"]:
+            print("You do not have this manyy shares to sell.")
+        else:
+            # getting price of share uniformly drawn from [0.9-1.2]
+            mutualfund_price = random.uniform(0.9, 1.2)
+            # multiplying share price by number of shares
+            mutualfund_total = mutualfund_price * shares
+            # updating number of shares
+            self.mutualfund[mutualfund.symbol]["shares"] -= shares
+            # adding cash from shares to portfolio
             self.cash -= mutualfund_total
     
     #create print method for portfolio
