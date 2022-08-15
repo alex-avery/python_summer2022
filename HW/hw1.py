@@ -9,13 +9,15 @@ import random
 class Portfolio:
     
     # create initializer for portfolio class
-    def __init__(self, cash = 0, stock = {}, mutualfund = {}):
+    def __init__(self, cash = 0, stock = {}, mutualfund = {}, transactions = []):
         # amount of cash in portfolio
         self.cash = cash
         # stocks and shares in portfolio 
         self.stock = stock
         # mutual funds and shares in portfolio
         self.mutualfund = mutualfund
+        # transaction log
+        self.transactions = transactions
           
     # create function to add cash
     def addCash(self, amount):
@@ -25,6 +27,8 @@ class Portfolio:
         # add cash amount
         else:
             self.cash += amount
+            #add to transaction log 
+            self.transactions.append(f"Cash deposit: {amount}")
     
     # create function to remove cash 
     def withdrawCash(self, amount):
@@ -34,6 +38,8 @@ class Portfolio:
         # remove cash amount 
         else:
             self.cash -= amount
+            #add to transaction log
+            self.transactions.append(f"Cash withdraw: {amount}")
     
     #create function to buy stocks 
     def buyStock(self, shares, stock):
@@ -46,6 +52,8 @@ class Portfolio:
             self.stock.update({stock.symbol: shares})
             # subtract stock price from cash
             self.cash -= stock_total
+            # add to transaction log
+            self.transactions.append(f"Bought {shares} shares of {stock.symbol}")
     
     # create function to buy mutual funds
     def buyMutualFund(self, shares, mutualfund):
@@ -57,10 +65,12 @@ class Portfolio:
             self.mutualfund.update({mutualfund.symbol: shares})
             # subtract mutual funds price from cash
             self.cash -= mutualfund_total
+            # add to transaction log
+            self.transactions.append(f"Bough {shares} shares of {mutualfund.symbol}")
     
     # create function to sell stocks
     def sellStock(self, stock, shares):
-        if shares > self.stocks[stock.symbol]["shares"]:
+        if shares > self.stock.get(stock.symbol):
             print("You do not have this many shares to sell.")
         else:
             # getting price of share uniformly drawn from [0.5-1.5]
@@ -71,6 +81,8 @@ class Portfolio:
             self.stock[stock.symbol] -= shares
             # adding cash from shares to portfolio
             self.cash -= stock_total
+            # add to transaction log 
+            self.transactions.append(f"Sold {shares} shares of {stock.symbol}")
     
     # create function to sell mutual fund
     def sellMutualFund(self, mutualfund, shares):
@@ -85,11 +97,13 @@ class Portfolio:
             self.mutualfund[mutualfund.symbol] -= shares
             # adding cash from shares to portfolio
             self.cash -= mutualfund_total
+            # add to transaction log 
+            self.transactions.append(f"Sold {shares} shares of {mutualfund.symbol}")
             
-    
     #create print method for portfolio
     def __str__(self):
         return "%s\n%s\n%s" %(self.cash, self.stock, self.mutualfund)
+
     
 # create Stock class 
 class Stock:
