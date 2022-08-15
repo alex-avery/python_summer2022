@@ -55,6 +55,10 @@ class Portfolio:
             # subtract mutual funds price from cash
             self.cash -= mutualfund_total
     
+    #create print method for portfolio
+    def __str__(self):
+        return "%s\n%s\n%s" %(self.cash, self.stocks, self.mutualfund)
+    
 # create Stock class 
 class Stock:
     # create initializer for stock class
@@ -89,5 +93,5 @@ print(portfolio) #Prints portfolio
 # 2 GHT
 portfolio.sellMutualFund("BRT", 3) #Sells 3 shares of BRT
 portfolio.sellStock("HFH", 1) #Sells 1 share of HFH
-portfolio.withdrawCash(50) #Removes $50
+portfolio.withdrawCash(50) #Removes $50 (check)
 portfolio.history() ##Prints a list of all transactions ordered by time
