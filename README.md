@@ -15,7 +15,7 @@ Teaching Assistant: Cecilia Sui
 | Day 03 | Wed. 8/10 | Errors and Exceptions        | 
 | Day 04 | Thu. 8/11 | Web Scraping                 | HW2 assigned, (due 8/17) 
 | Day 05 | Fri. 8/12 | Regular Expressions          | 
-| Day 06 | Mon. 8/15 | APIs                         | HW3 assigned, (due 8/19) 
+| Day 06 | Mon. 8/15 | APIs                         | HW3 assigned, (due 8/22) 
 | Day 07 | Wed. 8/17 | SQL and Database	          | 
 | Day 08 | Fri. 8/19 | Recursion and Sorting        | HW4 assigned, (due 8/24) 
 | Day 09 | Mon. 8/22 | More on Data Structure       | HW5 assigned, (due 8/26) 
