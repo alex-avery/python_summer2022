@@ -34,15 +34,20 @@ class Portfolio:
     
 # create Stock class 
 class Stock:
-    # create initializer for portfolio class
+    # create initializer for stock class
     def __init__(self, price, symbol):
         # price of stock 
         self.price = price 
+        # stock symbol
         self.symbol = symbol
 
 
 # create Mutual Funds class
 class Mutual_Funds:
+    # create initializer for mutual funds class
+    def __init__(self, ):
+        # mutual funds symbol
+        self.symbol = symbol
     
 
 # REQUIREMENTS:
