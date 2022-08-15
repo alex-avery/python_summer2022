@@ -103,6 +103,10 @@ class Portfolio:
     #create print method for portfolio
     def __str__(self):
         return "%s\n%s\n%s" %(self.cash, self.stock, self.mutualfund)
+    
+    # create history function to return transaction log
+    def history(self):
+        return self.transactions
 
     
 # create Stock class 
