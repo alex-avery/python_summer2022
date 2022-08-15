@@ -28,7 +28,7 @@ class Portfolio:
         else:
             self.cash += amount
             #add to transaction log 
-            self.transactions.append(f"Cash deposit: {amount}")
+            self.transactions.append(f"Cash deposit: ${amount}")
     
     # create function to remove cash 
     def withdrawCash(self, amount):
@@ -39,7 +39,7 @@ class Portfolio:
         else:
             self.cash -= amount
             #add to transaction log
-            self.transactions.append(f"Cash withdraw: {amount}")
+            self.transactions.append(f"Cash withdraw: ${amount}")
     
     #create function to buy stocks 
     def buyStock(self, shares, stock):
@@ -66,7 +66,7 @@ class Portfolio:
             # subtract mutual funds price from cash
             self.cash -= mutualfund_total
             # add to transaction log
-            self.transactions.append(f"Bough {shares} shares of {mutualfund.symbol}")
+            self.transactions.append(f"Bought {shares} shares of {mutualfund.symbol}")
     
     # create function to sell stocks
     def sellStock(self, stock, shares):
@@ -141,7 +141,7 @@ print(portfolio) #Prints portfolio
 #stock: 5 HFH
 #mutual funds: 10.33 BRT
 # 2 GHT
-portfolio.sellMutualFund("BRT", 3) #Sells 3 shares of BRT
-portfolio.sellStock("HFH", 1) #Sells 1 share of HFH
+portfolio.sellMutualFund(mf1, 3) #Sells 3 shares of BRT
+portfolio.sellStock(s, 1) #Sells 1 share of HFH
 portfolio.withdrawCash(50) #Removes $50 (check)
 portfolio.history() ##Prints a list of all transactions ordered by time
