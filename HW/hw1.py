@@ -58,10 +58,24 @@ class Portfolio:
             # subtract mutual funds price from cash
             self.cash -= mutualfund_total
     
+    # create function to sell stocks
+    def sellStock(self, stock, shares):
+        if shares > self.stocks[stock.symbol]["shares"]:
+            print("You do not have this many shares to sell.")
+        else:
+            # getting price of share uniformly drawn from [0.5-1.5]
+            stock_price = random.uniform(0.5 * stock.price, 1.5 * stock.price)
+            # multiplying share price by number of shares
+            stock_total = stock_price * shares
+            # updating number of shares
+            self.stock[stock.symbol]["shares"] -= shares
+            # adding cash from shares to portfolio
+            self.cash -= stock_total
+    
     # create function to sell mutual fund
     def sellMutualFund(self, mutualfund, shares):
         if shares > self.mutualfund[mutualfund.symbol]["shares"]:
-            print("You do not have this manyy shares to sell.")
+            print("You do not have this many shares to sell.")
         else:
             # getting price of share uniformly drawn from [0.9-1.2]
             mutualfund_price = random.uniform(0.9, 1.2)
@@ -71,6 +85,7 @@ class Portfolio:
             self.mutualfund[mutualfund.symbol]["shares"] -= shares
             # adding cash from shares to portfolio
             self.cash -= mutualfund_total
+            
     
     #create print method for portfolio
     def __str__(self):
