@@ -41,10 +41,13 @@ with open('biden_speeches.csv', 'w') as f:
             address_soup = BeautifulSoup(address_page.read())
             address = {}
             if address_soup.find('h3', {'class' : 'diet-title'}).text == 'Joseph R. Biden': 
-                address["Title"] = address_soup.find('div', {'class' : 'field-ds-doc-title'})
-                address["Date"] = address_soup.find('span', {'class' : 'date-display-single'})
-                address["Full Text"] = address_soup.find('div', {'class' : 'field-docs-content'})
-                address["Citation/Footnote"] = address_soup.find('div', {'class' : 'field-docs-footnote'})
+                try:
+                    address["Title"] = address_soup.find('div', {'class' : 'field-ds-doc-title'})
+                    address["Date"] = address_soup.find('span', {'class' : 'date-display-single'})
+                    address["Full Text"] = address_soup.find('div', {'class' : 'field-docs-content'})
+                    address["Citation/Footnote"] = address_soup.find('div', {'class' : 'field-docs-footnote'})
+                except:
+                    address["Citation/Footnote"] = "NA"
             else: 
                 break
                 
@@ -53,6 +56,9 @@ with open('biden_speeches.csv', 'w') as f:
 
 
 
+       
+            
+           
         
 
        
