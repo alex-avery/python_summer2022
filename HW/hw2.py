@@ -17,5 +17,10 @@ from bs4 import BeautifulSoup
 import urllib.request
 import csv 
 
-
+with open('biden_speeches.csv', 'w') as f:
+    w = csv.DictWriter(f, fieldnames = ("Title", "Date", "Full Text", "Citation/Footnote"))
+    w.writeheader()
+    web_address =  https://www.presidency.ucsb.edu/documents/app-categories/presidential/spoken-addressesand-remarks
+    web_page = urllib.request.urlopen(web_address)
+    all_html = BeautifulSoup(web_page.read())
     
