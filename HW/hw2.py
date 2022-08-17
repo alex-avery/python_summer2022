@@ -43,7 +43,7 @@ with open('biden_speeches.csv', 'w') as f:
             if address_soup.find('h3', {'class' : 'diet-title'}).text == 'Joseph R. Biden': 
                 address["Title"] = address_soup.find('div', {'class' : 'field-ds-doc-title'})
                 address["Date"] = address_soup.find('span', {'class' : 'date-display-single'})
-
+                address["Full Text"] = address_soup.find('div', {'class' : 'field-docs-content'})
 
         
 
