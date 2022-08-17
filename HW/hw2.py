@@ -34,7 +34,7 @@ with open('biden_speeches.csv', 'w') as f:
             page_url = web_address_60 + "?page=" + str(i)
         page = urllib.request.urlopen(page_url) 
         page_soup = BeautifulSoup(page.read()) 
-        address_title = soup.find_all('div', {'class' : 'field-title'})
+        address_title = page_soup.find_all('div', {'class' : 'field-title'})
         for i in address_title: 
             address_url = 'https://www.presidency.ucsb.edu' + i.find('a')['href']
             address_page = urllib.request.urlopen(address_url)
@@ -44,6 +44,11 @@ with open('biden_speeches.csv', 'w') as f:
                 address["Title"] = address_soup.find('div', {'class' : 'field-ds-doc-title'})
                 address["Date"] = address_soup.find('span', {'class' : 'date-display-single'})
                 address["Full Text"] = address_soup.find('div', {'class' : 'field-docs-content'})
+                address["Citation/Footnote"] = address_soup.find('div', {'class' : 'field-docs-footnote'})
+     
+
+
+
 
         
 
