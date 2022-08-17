@@ -45,8 +45,11 @@ with open('biden_speeches.csv', 'w') as f:
                 address["Date"] = address_soup.find('span', {'class' : 'date-display-single'})
                 address["Full Text"] = address_soup.find('div', {'class' : 'field-docs-content'})
                 address["Citation/Footnote"] = address_soup.find('div', {'class' : 'field-docs-footnote'})
+            else: 
+                break
+                
+                
      
-
 
 
 
