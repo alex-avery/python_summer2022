@@ -116,23 +116,29 @@ for town in session.query(Town).order_by(Town.id):
   print(town.id, town.name, town.population)
 
 
-
 # TODO: 
 # 1. Display, by department, the cities having
 #    more than 50,000 inhabitants.
+    
+for i in session.query(Town).join(Department).filter(Town.population > 50000).order_by(Town.population):
+  print(i.name, i.population, i.department.deptname)
 
 
 # 2. Display the towns with the minimum population in each region
 # print town name, population, region name
 # Hint: subqueries
 
+sub_min = session.query(func.min(Town.population).label('min')).join(Department).join(Region).group_by(Region.name).subquery()
+
+for i in session.query(Town).join(Department).join(Region).filter(sub_min.c.min == Town.population):
+    print(i.name, i.population, i.department.region.name)
+
 
 # 3. Display the total number of inhabitants
 #    per department using only a query (no lists!)
 
-  
-
-
+for i in session.query(Department.deptname, func.sum(Town.population).label('sum')).join(Department).group_by(Department.deptname):
+  print(i.sum, i.deptname)
 
 
 # Copyright (c) 2014 Matt Dickenson
