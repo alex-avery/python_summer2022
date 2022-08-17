@@ -1,4 +1,4 @@
-# Python - 2021 Summer Course
+# Python - 2022 Summer Course
 # Day 2
 # Topic: Namespace and classes
 # Instructor: Annamaria Prati
