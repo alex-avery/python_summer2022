@@ -34,6 +34,12 @@ wustl = api.get_user(screen_name = '@WUSTLPoliSci')
 
 # get number of followers
 wustl.followers_count
+followers = api.get_followers(screen_name = '@WUSTLPoliSci')
+
+
+# get number of friends 
+wustl.friends_count
+friends = api.get_friends(screen_name = '@WUSTLPoliSci')
 
 #create empty lists for different types of twitter users 
 laymen = []
