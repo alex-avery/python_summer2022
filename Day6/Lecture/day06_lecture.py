@@ -8,7 +8,7 @@
 # First Instructor: Matt Dickenson
 
 import os
-os.chdir('C:\\Users\\miame\\Documents\\GitHub\\python_summer2022\\Day6\\Lecture')
+os.chdir('/Users/alexcisco/Library/Mobile Documents/com~apple~CloudDocs/Documents/WUSTL/Courses/Python Course/python_summer2022/Day6/Lecture')
 
 #---------- APIs ----------#
 
@@ -52,7 +52,7 @@ os.chdir('C:\\Users\\miame\\Documents\\GitHub\\python_summer2022\\Day6\\Lecture'
 
 # All APIs are different, and each has its own learning curve 
 # Some require account keys:
-# 	- Keep these private
+# 	- Keep these private (DON"T PUSH THESE TO GITHUB!!)
 # Most have request limits
 # Some aren’t free
 # We’re using python wrappers for APIs
