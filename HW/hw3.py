@@ -3,7 +3,7 @@
 # Alex Avery
 
 # Assignment instructions:
-    # For the purposes of this exercise, we de ne three types of Twitter users.
+    # For the purposes of this exercise, we define three types of Twitter users.
         # Layman: Users with less than 100 followers
         # Expert: Users with 100-1000 followers
         # Celebrity: Users with more than 1000 followers
@@ -28,6 +28,17 @@ os.chdir('/Users/alexcisco/Library/Mobile Documents/com~apple~CloudDocs/Document
 # set up twitter api using authorization credintals called from file twitter_client.py
 twitter = importlib.import_module('twitter_client')
 api = twitter.client
+
+# Create user objects
+wustl = api.get_user(screen_name = '@WUSTLPoliSci')
+
+# get number of followers
+wustl.followers_count
+
+#create empty lists for different types of twitter users 
+laymen = []
+expert = []
+celebrity = 
 
 
 
