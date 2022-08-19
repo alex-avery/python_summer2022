@@ -112,7 +112,7 @@ session.add_all([t1, t2, t3, t4, t5, t6, t7, t8])
 session.commit()
 
 # Some example querying 
-for town in session.query(Town).order_by(Town.id):
+for i in session.query(Town).order_by(Town.id):
   print(town.id, town.name, town.population)
 
 
