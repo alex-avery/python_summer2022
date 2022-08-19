@@ -97,7 +97,7 @@ Base = declarative_base()
 # - Foreign key on child (player) references unique team ID (the primary key)
 # - relationship() method then specified by parent (team) to reference many items
 
-# Our Player table has 3 columns: ID, Name, and Number
+# Our Player table has 4 columns: ID, Name, Number, and Team ID
 class Player(Base):
   __tablename__ = 'players'
 
