@@ -34,17 +34,32 @@ wustl = api.get_user(screen_name = '@WUSTLPoliSci')
 
 # get number of followers
 wustl.followers_count
-followers = api.get_followers(screen_name = '@WUSTLPoliSci')
+followers = api.get_followers(user_id = wustl.id, count = 10)
+len(followers)
+
 
 
 # get number of friends 
 wustl.friends_count
-friends = api.get_friends(screen_name = '@WUSTLPoliSci')
+friends = api.get_friends(user_id = wustl.id, count = 10)
+len(friends)
 
 #create empty lists for different types of twitter users 
 laymen = []
 expert = []
-celebrity = 
+celebrity = []
+
+for follower in followers: 
+    if follower.followers_count < 100:
+        laymen.append(follower)
+    elif follower.followers_count >= 100 and follower.followers_count <= 1000:
+        expert.append(follower)
+    else:
+        celebrity.append(follower)
+
+        
+
+
 
 
 
