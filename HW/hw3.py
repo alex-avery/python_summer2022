@@ -169,34 +169,7 @@ for friend in friends:
 
 # -----------------------------------------------------------------------------
 
-# Among the followers of @WUSTLPoliSci and their followers, who is the most active?
 
-layman_expert = layman + expert
-layman_expert_followers = {}
-
-counter = 0
-
-for user in layman_expert:
-    counter += 1
-    print(f"Working on user {counter}.")
-    try:         
-        user_info = api.get_user("@" + user.screen_name)          
-        try:
-            layman_expert_followers = api.followers(user_info.id) 
-        except:
-            layman_expert_followers = [] 
-            print{"Error with user."}
-        layman_expert_followers__tweets = {} 
-        try:
-            for follower in layman_expert_followers:
-                layman_expert_followers_tweets[follower.screen_name] = follower.statuses_count   
-            layman_expert_followers_mostactive_name = max(layman_expert_followers, key = layman_expert_followers_tweet.get) #
-            layman_expert_followers_mostactive_count = max(layman_expert_followers_tweets.values())           
-            layman_expert_followers_mostactive[layman_expert_followers_mostactive_name] = layman_expert_followers_most_active_followers_count 
-        except:
-            
-    except:
-        time.sleep(15*60)
 
 # -----------------------------------------------------------------------------
 
