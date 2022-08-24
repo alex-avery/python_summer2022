@@ -63,9 +63,6 @@ for follower in followers:
     except tweepy.TweepyException:
         print("Error with user.")
 
-# print the results for most active follower 
-print(f"The most active follower(s) is/are {max_tweets.screen_name}.")
-
 # -----------------------------------------------------------------------------
 
 # MOST POPULAR FOLLOWER
@@ -85,11 +82,7 @@ for follower in followers:
             max_followers = follower
     except tweepy.TweepyException:
         print("Error with user.")
-    
-
-# print the results for most popular follower 
-print(f"The most popular follower(s) is/are {max_followers.screen_name}.")
-                    
+                        
 # -----------------------------------------------------------------------------
 
 # MOST ACTIVE LAYMAN, EXPERT, AND CELEBRITY FRIENDS
@@ -130,9 +123,6 @@ for l in layman:
     if l.statuses_count > layman_tweets.statuses_count:
         layman_tweets = l
 
-# print the results for most active layman 
-print(f"The most active layman is/are {layman_tweets.screen_name}.")
-
 # get number of tweets for every expert
 counter = 0 
 expert_tweets = 0
@@ -145,9 +135,6 @@ for e in expert:
     if e.statuses_count > expert_tweets.statuses_count:
         expert_tweets = e
 
-# print the results for most active layman 
-print(f"The most active expert is/are {expert_tweets.screen_name}.")
-
 # get number of tweets for every celebrity
 counter = 0 
 celebrity_tweets = 0
@@ -159,9 +146,6 @@ for c in celebrity:
     print(f"Working on celebrity {counter}.")
     if c.statuses_count > celebrity_tweets.statuses_count:
         celebrity_tweets = c
-
-# print the results for most active layman 
-print(f"The most active celebrity is/are {celebrity_tweets.screen_name}.")
 
 # -----------------------------------------------------------------------------
 
@@ -183,9 +167,64 @@ for friend in friends:
     except tweepy.TweepyException:
         print("Error with user.")
 
-# print the results for most popular friend 
-print(f"The most popular friend(s) is/are {max_friend.screen_name}.")
+# -----------------------------------------------------------------------------
 
+# Among the followers of @WUSTLPoliSci and their followers, who is the most active?
+
+layman_expert = layman + expert
+layman_expert_followers = {}
+
+counter = 0
+
+for user in layman_expert:
+    counter += 1
+    print(f"Working on user {counter}.")
+    try:         
+        user_info = api.get_user("@" + user.screen_name)          
+        try:
+            layman_expert_followers = api.followers(user_info.id) 
+        except:
+            layman_expert_followers = [] 
+            print{"Error with user."}
+        layman_expert_followers__tweets = {} 
+        try:
+            for follower in layman_expert_followers:
+                layman_expert_followers_tweets[follower.screen_name] = follower.statuses_count   
+            layman_expert_followers_mostactive_name = max(layman_expert_followers, key = layman_expert_followers_tweet.get) #
+            layman_expert_followers_mostactive_count = max(layman_expert_followers_tweets.values())           
+            layman_expert_followers_mostactive[layman_expert_followers_mostactive_name] = layman_expert_followers_most_active_followers_count 
+        except:
+            
+    except:
+        time.sleep(15*60)
+
+# -----------------------------------------------------------------------------
+
+# RESULTS
+
+# print the results for most active follower 
+print(f"The most active follower is {max_tweets.screen_name} with {max_tweets.statuses_count} tweets.")
+# The most active follower is TheNjoroge with 171075 tweets.
+
+# print the results for most popular follower 
+print(f"The most popular follower is {max_followers.screen_name} with {max_followers.followers_count} followers.")
+# The most popular follower is mariapaularomo with 357073 followers.
+
+# print the results for most active layman 
+print(f"The most active layman is {layman_tweets.screen_name} with {layman_tweets.statuses_count} tweets.")
+# The most active layman is stltoday with 205270 tweets.
+
+# print the results for most active layman 
+print(f"The most active expert is {expert_tweets.screen_name} with {expert_tweets.statuses_count} tweets.")
+# The most active expert is nytimes with 481654 tweets.
+
+# print the results for most active layman 
+print(f"The most active celebrity is {celebrity_tweets.screen_name} with {celebrity_tweets.statuses_count} tweets.")
+# The most active celebrity is washingtonpost with 435525 tweets.
+
+# print the results for most popular friend 
+print(f"The most popular friend is {max_friend.screen_name} with {max_friend.followers_count} followers.")
+# The most popular friend is WashUAdmissions with 1689 followers.
 
 
 
