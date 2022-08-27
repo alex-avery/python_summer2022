@@ -34,6 +34,13 @@ class LinkedList:
             new_node = Node(new_value)
             new_node.next = after_node.next
             after_node.next = new_node
+    
+    #def addNodeBefore(self, new_value, before_node):
+        #if before_node == None:
+           # print("The node does not exist.")
+       # else:
+            #new_node = Node(new_value)
+            #new_node.next = 
                  
     def removeNode(self, node_to_remove):
         head = self.head 
@@ -51,10 +58,8 @@ class LinkedList:
         previous.next = head.next 
         head = None
     
-    def removeNodesByValue(self, value):
-        for i in self.linklist:
-            if i == value:
-                self.linkedlist.remove
+   # def removeNodesByValue(self, value):
+ 
 
     def reverse(self): 
         initial = None
@@ -77,11 +82,17 @@ class LinkedList:
         return linkedlist
     
     def length(self):
-        return len(self.linkedlist)
+        counter = 1
+        node = self.head 
+        while node.next != None:
+            node = node.next 
+            counter += 1
+        return counter
+            
    
 
-        
-        
+
+
 # tests
 
 my_list = LinkedList()
@@ -92,7 +103,16 @@ my_list.addNode(5)
 
 my_list.addNodeAfter(4, my_list.head.next)
 
+my_list.removeNode(2)
+
+my_list.removeNodesByValue(5)
+
+my_list.reverse()
+
 print(my_list)
+
+my_list.length()
+
 
 
 
