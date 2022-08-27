@@ -64,6 +64,19 @@ class LinkedList:
             if i == value:
                 self.linkedlist.remove
 
+    def reverse(self): 
+        initial = None
+        first = self.head 
+        second = first.next 
+        while first:
+            first.next = initial 
+            initial = first 
+            first = second 
+            if second:
+                second = second.next 
+        self.head = previous 
+    
+        
 
         
         
