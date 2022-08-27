@@ -15,34 +15,26 @@ class Node:
 # next create linkedlist class
 class LinkedList:
     
-    def _init_(self):
+    def __init__(self):
         self.head = None
         
     def addNode(self,new_value):
-        new_node = Node(new_value)
         if self.head == None:
-            self.head = new_node
+            self.head = Node(new_value)
         else:
-            last_node = self.head
-            last_node = last_node.next 
-            last_node.next = new_node
-    
+            first_node = self.head 
+            while first_node.next != None:
+                first_node = first_node.next 
+            first_node.next = Node(new_value)
+   
     def addNodeAfter(self, new_value, after_node):
-        new_node = Node(new_value)
         if after_node == None:
             print("The previous node does not exist.")
-            return
-        new_node.next = after_node.next
-        after_node.next = new_node
-    
-    def addNodeBefore(self, new_value, before_node):
-        new_node = Node(new_value)
-        if before_node == None:
-            print("The node does not exist.")
-            return
-        position = self.linkedlist.index(before_node.value)
-        self.linkedlist.insert(position, new_value.value)
-    
+        else: 
+            new_node = Node(new_value)
+            new_node.next = after_node.next
+            after_node.next = new_node
+                 
     def removeNode(self, node_to_remove):
         head = self.head 
         if head != None:
@@ -74,7 +66,7 @@ class LinkedList:
             first = second 
             if second:
                 second = second.next 
-        self.head = previous 
+        self.head = initial 
     
     def __str__(self):
         head = self.head
@@ -86,16 +78,21 @@ class LinkedList:
     
     def length(self):
         return len(self.linkedlist)
-        
-            
-        
-        
-        
-        
+   
 
         
         
+# tests
 
+my_list = LinkedList()
+
+my_list.addNode(1)
+my_list.addNode(3)
+my_list.addNode(5)
+
+my_list.addNodeAfter(4, my_list.head.next)
+
+print(my_list)
 
 
 
