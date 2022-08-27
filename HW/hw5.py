@@ -41,25 +41,22 @@ class LinkedList:
        # else:
             #new_node = Node(new_value)
             #new_node.next = 
-                 
-    def removeNode(self, node_to_remove):
-        head = self.head 
-        if head != None:
-            if head.value == node_to_remove:
-                self.head = head.next 
-                return
-        while head != None:
-            if head.value == node_to_remove:
+  
+    def removeNodeByValue(self, node_to_remove):
+        node = self.head 
+        if node != None:
+            if node.value == node_to_remove:
+                self.head = node.next 
+                node = None
+        while node != None:
+            if node.value == node_to_remove:
                 break
-            previous = head
-            head = head.next 
-        if head == None:
+            previous = node 
+            node = node.next 
+        if node == None:
             return
-        previous.next = head.next 
-        head = None
-    
-   # def removeNodesByValue(self, value):
- 
+        previous.node = node.next 
+        node = None
 
     def reverse(self): 
         initial = None
@@ -88,9 +85,24 @@ class LinkedList:
             node = node.next 
             counter += 1
         return counter
-            
-   
+    
 
+
+# Driver program
+llist = LinkedList()
+llist.push(7)
+llist.push(1)
+llist.push(3)
+llist.push(2)
+
+print ("Created Linked List: ")
+llist.printList()
+llist.deleteNode(1)
+print ("
+Linked List after Deletion of 1:")
+llist.printList()
+
+# This code is contributed by Nikhil Kumar Singh (nickzuck_007)
 
 
 # tests
@@ -101,11 +113,15 @@ my_list.addNode(1)
 my_list.addNode(3)
 my_list.addNode(5)
 
+print(my_list)
+
 my_list.addNodeAfter(4, my_list.head.next)
 
-my_list.removeNode(2)
+print(my_list)
 
-my_list.removeNodesByValue(5)
+my_list.removeNodeByValue(1)
+
+print(my_list)
 
 my_list.reverse()
 
