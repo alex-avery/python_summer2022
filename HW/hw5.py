@@ -76,6 +76,18 @@ class LinkedList:
                 second = second.next 
         self.head = previous 
     
+    def __str__(self):
+        head = self.head
+        linkedlist = ''
+        while head:
+            linkedlist += str(head.value) + ', '
+            head = head.next 
+        return linkedlist
+        
+            
+        
+        
+        
         
 
         
