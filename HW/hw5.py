@@ -83,6 +83,9 @@ class LinkedList:
             linkedlist += str(head.value) + ', '
             head = head.next 
         return linkedlist
+    
+    def length(self):
+        return len(self.linkedlist)
         
             
         
