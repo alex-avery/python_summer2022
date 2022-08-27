@@ -26,4 +26,10 @@ class LinkedList:
             last_node = self.head
             last_node = last_node.next 
             last_node.next = new_node
+    
+    def addNodeAfter(self, new_value, after_node):
+        new_node = Node(new_value)
+        new_node.next = after_node.next
+        after_node.next = new_node
+ 
         
