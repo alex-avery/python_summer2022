@@ -58,6 +58,13 @@ class LinkedList:
             return
         previous.next = head.next 
         head = None
+    
+    def removeNodesByValue(self, value):
+        for i in self.linklist:
+            if i == value:
+                self.linkedlist.remove
+
+
         
         
 
